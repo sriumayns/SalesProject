@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://TransactionModel/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://TransactionModel/">
+
+<xs:element name="addPurchase" type="tns:addPurchase"/>
+
+<xs:element name="addPurchaseResponse" type="tns:addPurchaseResponse"/>
+
+<xs:element name="getPurchaseProduct" type="tns:getPurchaseProduct"/>
+
+<xs:element name="getPurchaseProductResponse" type="tns:getPurchaseProductResponse"/>
+
+<xs:element name="hello" type="tns:hello"/>
+
+<xs:element name="helloResponse" type="tns:helloResponse"/>
+
+<xs:complexType name="addPurchase">
+<xs:sequence>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+<xs:element name="id_product" type="xs:string" minOccurs="0"/>
+<xs:element name="penerima_barang" type="xs:string" minOccurs="0"/>
+<xs:element name="alamat_penerima" type="xs:string" minOccurs="0"/>
+<xs:element name="postal_code" type="xs:string" minOccurs="0"/>
+<xs:element name="phone_num" type="xs:string" minOccurs="0"/>
+<xs:element name="credit_num" type="xs:string" minOccurs="0"/>
+<xs:element name="verification_num" type="xs:string" minOccurs="0"/>
+<xs:element name="jml_barang" type="xs:string" minOccurs="0"/>
+<xs:element name="owner" type="xs:string" minOccurs="0"/>
+<xs:element name="productname" type="xs:string" minOccurs="0"/>
+<xs:element name="price" type="xs:string" minOccurs="0"/>
+<xs:element name="photo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addPurchaseResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPurchaseProduct">
+<xs:sequence>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPurchaseProductResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

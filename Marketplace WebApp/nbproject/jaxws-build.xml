@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:webproject2="http://www.netbeans.org/ns/web-project/2" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSGEN SECTION
+                ===================
+            -->
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <fail if="${wsimport.bad.version}" message="WsImport ant task defined in the classpath ${j2ee.platform.wsimport.classpath} has a serious bug. See http://wiki.netbeans.org/MetroIssue for details."/>
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <property name="j2ee.platform.wsimport.classpath" value="${libs.jaxws21.classpath}"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${java.home}/../lib/tools.jar:${j2ee.platform.wsimport.classpath}:${javac.classpath}"/>
+        </taskdef>
+        <condition property="conf-dir" value="${conf.dir}/" else="">
+            <isset property="conf.dir"/>
+        </condition>
+    </target>
+    <target name="wsimport-client-ConfirmPurchaseWS" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ConfirmPurchaseWS"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ConfirmPurchaseWS" destdir="${build.generated.dir}/jax-wsCache/ConfirmPurchaseWS" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ConfirmPurchaseWS/wsdl/localhost_8081/Marketplace_WebService/ConfirmPurchaseWS.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8081/Marketplace_WebService/ConfirmPurchaseWS?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ConfirmPurchaseWS/wsdl/localhost_8081/Marketplace_WebService/ConfirmPurchaseWS.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ConfirmPurchaseWS"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ConfirmPurchaseWS">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ConfirmPurchaseWS" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/transactionmodel"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/ConfirmPurchaseWS"/>
+    </target>
+    <target name="wsimport-client-DeleteYourProductWS" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/DeleteYourProductWS"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/DeleteYourProductWS" destdir="${build.generated.dir}/jax-wsCache/DeleteYourProductWS" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/DeleteYourProductWS/wsdl/localhost_8081/Marketplace_WebService/DeleteYourProductWS.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8081/Marketplace_WebService/DeleteYourProductWS?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/DeleteYourProductWS/wsdl/localhost_8081/Marketplace_WebService/DeleteYourProductWS.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/DeleteYourProductWS"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/DeleteYourProductWS">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-DeleteYourProductWS" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/produkmodel"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/DeleteYourProductWS"/>
+    </target>
+    <target name="wsimport-client-TransactionWS" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/TransactionWS"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/TransactionWS" destdir="${build.generated.dir}/jax-wsCache/TransactionWS" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/TransactionWS/wsdl/localhost_8081/Marketplace_WebService/TransactionWS.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8081/Marketplace_WebService/TransactionWS?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/TransactionWS/wsdl/localhost_8081/Marketplace_WebService/TransactionWS.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/TransactionWS"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/TransactionWS">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-TransactionWS" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/transactionmodel"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/TransactionWS"/>
+    </target>
+    <target name="wsimport-client-AddProdukWS" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/AddProdukWS"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/AddProdukWS" destdir="${build.generated.dir}/jax-wsCache/AddProdukWS" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/AddProdukWS/wsdl/localhost_8081/Marketplace_WebService/AddProdukWS.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8081/Marketplace_WebService/AddProdukWS?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/AddProdukWS/wsdl/localhost_8081/Marketplace_WebService/AddProdukWS.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/AddProdukWS"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/AddProdukWS">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-AddProdukWS" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/produkmodel"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/AddProdukWS"/>
+    </target>
+    <target name="wsimport-client-ProdukWS" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ProdukWS"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ProdukWS" destdir="${build.generated.dir}/jax-wsCache/ProdukWS" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ProdukWS/wsdl/localhost_8081/Marketplace_WebService/ProdukWS.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8081/Marketplace_WebService/ProdukWS?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ProdukWS/wsdl/localhost_8081/Marketplace_WebService/ProdukWS.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ProdukWS"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ProdukWS">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ProdukWS" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/produkmodel"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/ProdukWS"/>
+    </target>
+    <target name="wsimport-client-YourProductWS" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/YourProductWS"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/YourProductWS" destdir="${build.generated.dir}/jax-wsCache/YourProductWS" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/YourProductWS/wsdl/localhost_8081/Marketplace_WebService/YourProductWS.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8081/Marketplace_WebService/YourProductWS?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/YourProductWS/wsdl/localhost_8081/Marketplace_WebService/YourProductWS.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/YourProductWS"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/YourProductWS">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-YourProductWS" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/produkmodel"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/YourProductWS"/>
+    </target>
+    <target name="wsimport-client-EditProductWS" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/EditProductWS"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/EditProductWS" destdir="${build.generated.dir}/jax-wsCache/EditProductWS" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/EditProductWS/wsdl/localhost_8081/Marketplace_WebService/EditProductWS.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8081/Marketplace_WebService/EditProductWS?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/EditProductWS/wsdl/localhost_8081/Marketplace_WebService/EditProductWS.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/EditProductWS"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/EditProductWS">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-EditProductWS" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/produkmodel"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/EditProductWS"/>
+    </target>
+    <target name="wsimport-client-LikeWS" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/LikeWS"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/LikeWS" destdir="${build.generated.dir}/jax-wsCache/LikeWS" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/LikeWS/wsdl/localhost_8081/Marketplace_WebService/LikeWS.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8081/Marketplace_WebService/LikeWS?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/LikeWS/wsdl/localhost_8081/Marketplace_WebService/LikeWS.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/LikeWS"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/LikeWS">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-LikeWS" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/produkmodel"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/LikeWS"/>
+    </target>
+    <target name="wsimport-client-TokenValidationWS" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/TokenValidationWS"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/TokenValidationWS" destdir="${build.generated.dir}/jax-wsCache/TokenValidationWS" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/TokenValidationWS/wsdl/localhost_8081/Marketplace_WebService/TokenValidationWS.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8081/Marketplace_WebService/TokenValidationWS?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/TokenValidationWS/wsdl/localhost_8081/Marketplace_WebService/TokenValidationWS.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/TokenValidationWS"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/TokenValidationWS">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-TokenValidationWS" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/akunmodel"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/TokenValidationWS"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-ConfirmPurchaseWS, wsimport-client-DeleteYourProductWS, wsimport-client-TransactionWS, wsimport-client-AddProdukWS, wsimport-client-ProdukWS, wsimport-client-YourProductWS, wsimport-client-EditProductWS, wsimport-client-LikeWS, wsimport-client-TokenValidationWS"/>
+</project>

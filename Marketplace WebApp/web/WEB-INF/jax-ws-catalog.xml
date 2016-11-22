@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8081/Marketplace_WebService/ProdukWS?wsdl" uri="wsdl/localhost_8081/Marketplace_WebService/ProdukWS.wsdl"/>
+    <system systemId="http://localhost:8081/Marketplace_WebService/ProdukWS?xsd=1" uri="wsdl/localhost_8081/Marketplace_WebService/ProdukWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8081/Marketplace_WebService/YourProductWS?wsdl" uri="wsdl/localhost_8081/Marketplace_WebService/YourProductWS.wsdl"/>
+    <system systemId="http://localhost:8081/Marketplace_WebService/YourProductWS?xsd=1" uri="wsdl/localhost_8081/Marketplace_WebService/YourProductWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8081/Marketplace_WebService/TransactionWS?wsdl" uri="wsdl/localhost_8081/Marketplace_WebService/TransactionWS.wsdl"/>
+    <system systemId="http://localhost:8081/Marketplace_WebService/TransactionWS?xsd=1" uri="wsdl/localhost_8081/Marketplace_WebService/TransactionWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8081/Marketplace_WebService/DeleteProductWS?wsdl" uri="wsdl/localhost_8081/Marketplace_WebService/DeleteProductWS.wsdl"/>
+    <system systemId="http://localhost:8081/Marketplace_WebService/DeleteProductWS?xsd=1" uri="wsdl/localhost_8081/Marketplace_WebService/DeleteProductWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8081/Marketplace_WebService/ConfirmPurchaseWS?wsdl" uri="wsdl/localhost_8081/Marketplace_WebService/ConfirmPurchaseWS.wsdl"/>
+    <system systemId="http://localhost:8081/Marketplace_WebService/ConfirmPurchaseWS?xsd=1" uri="wsdl/localhost_8081/Marketplace_WebService/ConfirmPurchaseWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8081/Marketplace_WebService/DeleteYourProductWS?wsdl" uri="wsdl/localhost_8081/Marketplace_WebService/DeleteYourProductWS.wsdl"/>
+    <system systemId="http://localhost:8081/Marketplace_WebService/DeleteYourProductWS?xsd=1" uri="wsdl/localhost_8081/Marketplace_WebService/DeleteYourProductWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8081/Marketplace_WebService/AddProdukWS?wsdl" uri="wsdl/localhost_8081/Marketplace_WebService/AddProdukWS.wsdl"/>
+    <system systemId="http://localhost:8081/Marketplace_WebService/AddProdukWS?xsd=1" uri="wsdl/localhost_8081/Marketplace_WebService/AddProdukWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8081/Marketplace_WebService/EditProductWS?wsdl" uri="wsdl/localhost_8081/Marketplace_WebService/EditProductWS.wsdl"/>
+    <system systemId="http://localhost:8081/Marketplace_WebService/EditProductWS?xsd=1" uri="wsdl/localhost_8081/Marketplace_WebService/EditProductWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8081/Marketplace_WebService/LikeWS?wsdl" uri="wsdl/localhost_8081/Marketplace_WebService/LikeWS.wsdl"/>
+    <system systemId="http://localhost:8081/Marketplace_WebService/LikeWS?xsd=1" uri="wsdl/localhost_8081/Marketplace_WebService/LikeWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8081/Marketplace_WebService/TokenValidationWS?wsdl" uri="wsdl/localhost_8081/Marketplace_WebService/TokenValidationWS.wsdl"/>
+    <system systemId="http://localhost:8081/Marketplace_WebService/TokenValidationWS?xsd=1" uri="wsdl/localhost_8081/Marketplace_WebService/TokenValidationWS.xsd_1.xsd"/>
+</catalog>

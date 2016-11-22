@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="ProdukWS">
+      <implementation-class>ProdukModel.ProdukWS</implementation-class>
+    </service>
+    <service name="YourProductWS">
+      <implementation-class>ProdukModel.YourProductWS</implementation-class>
+    </service>
+    <service name="TransactionWS">
+      <implementation-class>TransactionModel.TransactionWS</implementation-class>
+    </service>
+    <service name="ConfirmPurchaseWS">
+      <implementation-class>TransactionModel.ConfirmPurchaseWS</implementation-class>
+    </service>
+    <service name="AddProdukWS">
+      <implementation-class>ProdukModel.AddProdukWS</implementation-class>
+    </service>
+    <service name="DeleteYourProductWS">
+      <implementation-class>ProdukModel.DeleteYourProductWS</implementation-class>
+    </service>
+    <service name="EditProductWS">
+      <implementation-class>ProdukModel.EditProductWS</implementation-class>
+    </service>
+    <service name="LikeWS">
+      <implementation-class>ProdukModel.LikeWS</implementation-class>
+    </service>
+    <service name="TokenValidationWS">
+      <implementation-class>AkunModel.TokenValidationWS</implementation-class>
+    </service>
+  </services>
+  <clients/>
+  <jsr109>true</jsr109>
+</jax-ws>
