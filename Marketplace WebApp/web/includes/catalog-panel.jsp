@@ -54,7 +54,10 @@
 //            String liked = "haha";
 %>
             <div class="date-and-time">
-                <p class="username"><%= owner %></p>
+                <ul>
+                    <li class="hidden"><a href="#" ><%= owner %></a></li>
+                    <li class="username" id="openChat"><a href="#" ><%= owner %></a></li>
+                </ul>
                 <p> <%= addtime %> </p>
             </div>
 
@@ -74,6 +77,7 @@
                             </div>
                     </div>
             </div>
+                                    <br>
 <%          }
         }
     }%>
