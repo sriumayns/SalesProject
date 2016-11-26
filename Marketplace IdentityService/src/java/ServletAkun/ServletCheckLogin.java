@@ -5,18 +5,15 @@
  */
 package ServletAkun;
 
-import static ServletAkun.ServletRegister.generateToken;
+import static ServletAkun.ServletToken.generateToken;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.Timestamp;
 import java.util.Date;
-import java.util.Random;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,10 +24,11 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author rezaramadhan
  */
-@WebServlet(name = "ServletToken", urlPatterns = {"/ServletToken"})
-public class ServletToken extends HttpServlet {
+@WebServlet(name = "ServletCheckLogin", urlPatterns = {"/checklogin"})
+public class ServletCheckLogin extends HttpServlet {
     private int nMinute = 1000*60;
     private int expireTime = nMinute * 10;
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -44,9 +42,6 @@ public class ServletToken extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            
-
-            
             /* TODO output your page here. You may use following sample code. */
             String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
             String DB_URL = "jdbc:mysql://localhost:3306/akun?zeroDateTimeBehavior=convertToNull";
@@ -62,54 +57,43 @@ public class ServletToken extends HttpServlet {
                 Class.forName("com.mysql.jdbc.Driver");
 
                 //Open a connection
-                System.out.println("Connecting to database...");
                 conn = DriverManager.getConnection(DB_URL,USER,PASS);
 
                 //Get request parameter
                 stmt = conn.createStatement();
+                //GET IP ADDR
+                String username = request.getParameter("username");  
                 
-                String oldtoken = request.getParameter("token");  
-                String token = generateToken(16);
-              
-                String query1 = "SELECT * FROM User WHERE token='"+oldtoken+"'";
+                String query1 = "SELECT * FROM User WHERE username='"+username+"'";
+                
                 ResultSet result = stmt.executeQuery(query1);
                 result.last();
                 int rows = result.getRow();
                 result.beforeFirst();
                 
-                out.print(oldtoken + "<br>");
+//                out.print("username "+ username + "<br>");
                 
                 if (rows==1) {
                     result.first();
-                    String username = result.getString("username");
+                    
                     long expiredAt = result.getTimestamp("expire").getTime() + expireTime;
                     Date cTime = new Date();
                     long currentTime = cTime.getTime();
                     
+//                    out.println(expiredAt);
+//                    out.println(currentTime);
+                    
                     boolean valid = expiredAt > currentTime;
                     
                     if (valid) {
-//                        String sql = "UPDATE user SET token=? WHERE username='"+username+"'";
-//                        //Execute query
-//                         PreparedStatement prStmt = conn.prepareStatement(sql);
-//                         prStmt.setString(1, token);
-//                         prStmt.executeUpdate();
-//
-//                         if(result.next()) {     
-//                             username = result.getString("username");
-//                             out.print(username);
-//                         }
-                         out.println("VALID");
-//                         out.println("<h2>Token : "+ token +"</h2>");
+                         out.print("IN");
                     } else {
-                        out.println("expired");
-                        //response.sendRedirect("http://localhost:8080/Marketplace_WebApp/ServletCookie?token="+token+"&username="+username);
+                        out.print("OUT");
                     }
                     stmt.close();
                     conn.close();
                 } else {
-                    out.println("invalid");
-//                    response.sendRedirect("http://localhost:8080/Marketplace_WebApp/login.jsp");
+                    out.println("NOT FOUND");
                 }
             } catch(SQLException se){
                 //Handle errors for JDBC
@@ -182,13 +166,5 @@ public class ServletToken extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-public static String generateToken(int length) {
-        Random random = new Random();
-        char[] digits = new char[length];
-        digits[0] = (char) (random.nextInt(9) + '1');
-        for (int i = 1; i < length; i++) {
-            digits[i] = (char) (random.nextInt(10) + '0');
-        }
-        return new String(digits);
-    }
+
 }

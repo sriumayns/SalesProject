@@ -20,9 +20,9 @@
     
     if (newToken.contains("expired") || cookies.length==1 || newToken.contains("invalid")){
         out.print(newToken);
-//        String site = new String("http://localhost:8080/Marketplace_WebApp/login.jsp");
-//        response.setStatus(response.SC_MOVED_TEMPORARILY);
-//        response.setHeader("Location", site); 
+        String site = new String("http://localhost:8080/Marketplace_WebApp/login.jsp");
+        response.setStatus(response.SC_MOVED_TEMPORARILY);
+        response.setHeader("Location", site); 
     } else {
 //        Cookie c = new Cookie("token",newToken);
 //        
