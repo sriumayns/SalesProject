@@ -1,0 +1,5 @@
+*.class
+*.war
+/Marketplace WebApp/nbproject/private/*
+/Marketplace WebService/nbproject/private/*
+/Marketplace IdentityService/nbproject/private/*
