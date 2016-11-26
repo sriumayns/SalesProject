@@ -57,12 +57,12 @@ public class AkunController {
         return null;
     }
     
-    public static boolean isUserOnline(String username) {
+    public static String checkUserOnline(String username) {
         HttpURLConnection connection = null;
 
         try {
           //Create connection
-          String targetURL = "http://localhost:8082/Marketplace_IdentityService/userinfo?username=" + username;
+          String targetURL = "http://localhost:8082/Marketplace_IdentityService/checklogin?username=" + username;
           URL url = new URL(targetURL);
           connection = (HttpURLConnection) url.openConnection();
           connection.setRequestMethod("GET");
@@ -84,7 +84,9 @@ public class AkunController {
             response.append('\r');
           }
           rd.close();
-          return response.toString().contains("IN");
+          
+          return response.toString();
+          
         } catch (Exception e) {
             //return null;
         } finally {
@@ -93,6 +95,6 @@ public class AkunController {
           }
         }
         
-        return false;
+        return null;
     }
 }

@@ -52,11 +52,16 @@
 //            String nLike = "haha";
 //            String nPurchase = "haha";
 //            String liked = "haha";
+                boolean isON = Controller.AkunController.checkUserOnline(owner).contains("IN");
 %>
             <div class="date-and-time">
                 <ul>
                     <li class="hidden"><a href="#" ><%= owner %></a></li>
-                    <li class="username" id="openChat"><a href="#" ><%= owner %></a></li>
+                <% if (isON) {%>
+                    <li class="username online" id="openChat"><a href="#" ><%= owner %></a></li>
+                <%} else {%>
+                    <li class="username offline"><a href="#" ><%= owner %></a></li>
+                <% } %>
                 </ul>
                 <p> <%= addtime %> </p>
             </div>

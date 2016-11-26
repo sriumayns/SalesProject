@@ -18,7 +18,7 @@
 //       out.println("<h2>No cookies founds</h2>");
 //    }
             
-    String username = cookies[1].getValue();
+    String username = Controller.RetrieveCookieController.retrieveName(cookies);
     String[] results = Controller.YourProductController.displayProduct(username);
     String id_active = "0";
 //    out.print("<br>" + results.length);

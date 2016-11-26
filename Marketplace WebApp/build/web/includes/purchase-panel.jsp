@@ -20,7 +20,7 @@
     }else{
 //                out.println("<h2>No cookies founds</h2>");
     }
-    String username = cookies[1].getValue();
+    String username = Controller.RetrieveCookieController.retrieveName(cookies);
     //String username = "aku";
     String[] results = Controller.TransactionController.displayPurchase(username);
 //    out.print("<br>" + results.length);
