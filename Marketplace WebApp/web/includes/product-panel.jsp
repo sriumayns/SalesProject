@@ -56,7 +56,7 @@
             <p><%= nPurchase %> purchases</p>
             <div class="menu">
                     <p><a class="menu-edit" href="editproducts.jsp?id_product=<%= id %>">EDIT</a></p>
-                    <p><a class="menu-delete" onclick="return(confirmdelete());" href="includes/delete-product.jsp?idProduct=<%=id%>">DELETE</a></p>
+                    <p><a class="menu-delete" onclick="return (validateDelete());" href="includes/delete-product.jsp?idProduct=<%=id%>">DELETE</a></p>
             </div>
     </div>
 </div>

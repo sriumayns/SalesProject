@@ -83,7 +83,7 @@ public class ServletLogin extends HttpServlet {
                 
                 
                 if (rows==1) {
-                    String sql = "UPDATE user SET token=? WHERE username='"+username+"' OR email='"+username+"'" ;
+                    String sql = "UPDATE User SET token=? WHERE username='"+username+"' OR email='"+username+"'" ;
                    //Execute query
                     PreparedStatement prStmt = conn.prepareStatement(sql);
                     prStmt.setString(1, token);

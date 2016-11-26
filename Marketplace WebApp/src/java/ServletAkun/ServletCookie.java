@@ -33,6 +33,16 @@ public class ServletCookie extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
+        //GET IP ADDR
+        String ipAddress = request.getHeader("X-FORWARDED-FOR");  
+        if (ipAddress == null) {  
+            ipAddress = request.getRemoteAddr();  
+        }
+        
+        //GET User-agent
+        String userAgent = request.getHeader("User-Agent");
+        
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
@@ -42,8 +52,10 @@ public class ServletCookie extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet ServletCookie at " + request.getContextPath() + "</h1>");
-            out.println("<h1>Servlet ServletCookie at " + request.getParameter("uname") + "</h1>");
-            out.println("<h1>Servlet ServletCookie at " + request.getParameter("token") + "</h1>");
+            out.println("<h1>Uname " + request.getParameter("uname") + "</h1>");
+            out.println("<h1>TOKEN " + request.getParameter("token") + "</h1>");
+            out.println("<h1>IPADDR " + ipAddress + "</h1>");
+            out.println("<h1>useragent " + userAgent + "</h1>");
             out.println("</body>");
             out.println("</html>");
             
@@ -52,24 +64,31 @@ public class ServletCookie extends HttpServlet {
                             request.getParameter("username"));
             Cookie token = new Cookie("token",
                             request.getParameter("token"));
-
-            // Set expiry date after 24 Hrs for both the cookies.
+            Cookie ip = new Cookie("ip",
+                            ipAddress);
+            Cookie user_agent = new Cookie("user",
+                            userAgent);
+            
+            // Set expiry date 
             username.setMaxAge(60*expireAfter); 
             token.setMaxAge(60*expireAfter); 
+            ip.setMaxAge(60*expireAfter); 
+            user_agent.setMaxAge(60*expireAfter); 
 
             // Add both the cookies in the response header.
             response.addCookie(username);
             response.addCookie(token);
+            response.addCookie(ip);
+            response.addCookie(user_agent);
 
             // Set response content type
             response.setContentType("text/html");
 
             response.sendRedirect("http://localhost:8080/Marketplace_WebApp/catalog.jsp");
-
-            
         }
     }
-
+    
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

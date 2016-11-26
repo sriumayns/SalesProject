@@ -5,7 +5,11 @@
  */
 
 
-function confirmdelete(){
-        var result = confirm("Are you sure want to delete this product?");
-        return result;
+function validateDelete() {
+    var result = confirm("Are you sure want to delete this product?");
+    if (result) {
+        return true;
+    } else {
+        return false;
+    }
 }

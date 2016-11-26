@@ -75,7 +75,7 @@ public class ServletLogout extends HttpServlet {
                 String password = request.getParameter("password"); 
                 String token ="0";
               
-                String sql = "UPDATE user SET token=? WHERE username='"+username+"' OR email='"+username+"'" ;
+                String sql = "UPDATE User SET token=? WHERE username='"+username+"' OR email='"+username+"'" ;
                 //Execute query
                 PreparedStatement prStmt = conn.prepareStatement(sql);
                 prStmt.setString(1, token);

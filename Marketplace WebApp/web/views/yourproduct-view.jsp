@@ -10,7 +10,7 @@
 	<head>
 		<meta charset="utf-8"/>
 		<link rel="stylesheet" href="views/css/style.css">
-		<script src="javascript/yourproduct.js" type="text/javascript"></script>
+		<script src="javascript/delete-confirmation.js" type="text/javascript"></script>
 		<title>Sale Project</title>
 	</head>
 

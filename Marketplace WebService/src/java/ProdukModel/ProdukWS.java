@@ -177,7 +177,7 @@ public class ProdukWS {
         //Get request parameter
         stmt = conn.createStatement();
 
-        String query = "SELECT * FROM Liked WHERE id_product = " + idProduct;
+        String query = "SELECT DISTINCT * FROM Liked WHERE id_product = " + idProduct;
         
         ResultSet rs = stmt.executeQuery(query);
         rs.last();

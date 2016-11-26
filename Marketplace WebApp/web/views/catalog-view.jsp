@@ -36,7 +36,7 @@
 
 		<form class="container-search" method="GET">
 			<input type="hidden" name="id_active" value=0 />
-			<input id="form_search" type="text" name="search" value="Search catalog ..." onfocus="clearBar(this)">
+			<input id="form_search" type="text" name="search" placeholder="Search catalog ..." onfocus="clearBar(this)">
 			<button id="btn_GO" type="submit">GO</button>
 			<div class="container-radio">
 				<input class="radio" type="radio" name="search_opt" value="name" checked="checked"> Buy Product
