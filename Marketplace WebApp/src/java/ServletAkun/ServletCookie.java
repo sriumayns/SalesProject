@@ -42,7 +42,8 @@ public class ServletCookie extends HttpServlet {
         
         //GET User-agent
         String userAgent = request.getHeader("User-Agent");
-        
+        userAgent = userAgent.replaceAll(";", "");
+            
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
@@ -58,7 +59,6 @@ public class ServletCookie extends HttpServlet {
             out.println("<h1>useragent " + userAgent + "</h1>");
             out.println("</body>");
             out.println("</html>");
-            
             // Create cookies for first and last names.      
             Cookie username = new Cookie("username",
                             request.getParameter("username"));
@@ -66,9 +66,9 @@ public class ServletCookie extends HttpServlet {
                             request.getParameter("token"));
             Cookie ip = new Cookie("ip",
                             ipAddress);
-            Cookie user_agent = new Cookie("user",
+            Cookie user_agent = new Cookie("user_agent",
                             userAgent);
-            
+            user_agent.setValue(userAgent);
             // Set expiry date 
             username.setMaxAge(60*expireAfter); 
             token.setMaxAge(60*expireAfter); 

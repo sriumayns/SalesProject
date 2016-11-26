@@ -67,6 +67,15 @@ public class ServletToken extends HttpServlet {
 
                 //Get request parameter
                 stmt = conn.createStatement();
+                //GET IP ADDR
+                String ipAddress = request.getHeader("X-FORWARDED-FOR");  
+                if (ipAddress == null) {  
+                    ipAddress = request.getRemoteAddr();  
+                }
+
+                //GET User-agent
+                String userAgent = request.getHeader("User-Agent");
+
                 String oldtoken = request.getParameter("token");  
                 String token = generateToken(16);
               
@@ -76,6 +85,7 @@ public class ServletToken extends HttpServlet {
                 int rows = result.getRow();
                 result.beforeFirst();
                 
+                out.print(oldtoken + "<br>");
                 
                 if (rows==1) {
                     result.first();

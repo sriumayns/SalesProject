@@ -83,10 +83,20 @@ public class ServletLogin extends HttpServlet {
                 
                 
                 if (rows==1) {
+                     //GET IP ADDR
+                    String ipAddress = request.getHeader("X-FORWARDED-FOR");  
+                    if (ipAddress == null) {  
+                        ipAddress = request.getRemoteAddr();  
+                    }
+
+                    //GET User-agent
+                    String userAgent = request.getHeader("User-Agent");
+                    userAgent = userAgent.replaceAll(";", "");
+            
                     String sql = "UPDATE User SET token=? WHERE username='"+username+"' OR email='"+username+"'" ;
                    //Execute query
                     PreparedStatement prStmt = conn.prepareStatement(sql);
-                    prStmt.setString(1, token);
+                    prStmt.setString(1, token + "__" + userAgent + "__" + ipAddress);
                     prStmt.executeUpdate();
                     
                     if(result.next()) {     
