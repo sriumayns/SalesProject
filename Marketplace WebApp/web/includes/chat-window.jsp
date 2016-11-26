@@ -1,34 +1,21 @@
 <%-- 
-    Document   : login
-    Created on : Nov 7, 2016, 11:57:59 AM
+    Document   : chat-window
+    Created on : Nov 26, 2016, 7:59:38 PM
     Author     : Mayu
 --%>
-<%
-    Cookie[] cookies = null;
-    cookies = request.getCookies();
-//    out.println(cookies.length);
-//    if (cookies.length>1){
-//        String site = new String("http://localhost:8080/Marketplace_WebApp/catalog.jsp");
-//        response.setStatus(response.SC_MOVED_TEMPORARILY);
-//        response.setHeader("Location", site); 
-//    } else {
-%>
 
-<jsp:include page="views/login-view.jsp" />
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-sanitize.js"></script>
-<h2>Chat Sementara</h2>
-
-        <!-- Trigger/Open The Modal -->
-        <a href="#" id="myBtn">Open Chat</a>
 
         <!-- The Modal -->
         <div id="myModal" class="modal">
             <!-- Modal content -->
             <div class="modal-content" ng-app="chatApp" ng-controller="chatController">
                 <div class="chat-header">
-                    <span class="close">×</span>
-                    <span class="chat-friend">Chatbox</span>
+                    <span class="close">Ã—</span>
+                    <span class="chat-friend">Chat Box</span>
                 </div>
                 <div class="chat-box" ng-bind-html="chatHistory">
                     
@@ -57,7 +44,7 @@
         var modal = document.getElementById('myModal');
 
         // Get the button that opens the modal
-        var btn = document.getElementById("myBtn");
+        var btn = document.getElementById("openChat");
 
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
@@ -79,11 +66,3 @@
             }
         }
         </script>
-
-<% //} %>
-
-
-
-
-
-
