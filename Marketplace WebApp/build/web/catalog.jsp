@@ -30,6 +30,6 @@
 //        out.println(Controller.RetrieveCookieController.retrieveToken(cookies) + "newVal<br>");
 %>
 
-        <jsp:include page="views/catalog-view.jsp" />
+<jsp:include page="views/catalog-view.jsp" />
 
 <% } %>
