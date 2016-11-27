@@ -44,16 +44,16 @@
         var modal = document.getElementById('myModal');
 
         // Get the button that opens the modal
-//        var btns = document.getElementsByClassName("openChat");
+        var btn = document.getElementById("openChat");
 
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
 
         // When the user clicks the button, open the modal
 //        for (i = 0; i < btns.length; i++) {
-//            btns[i].onclick = function() {
+//            btn.onclick = function() {
 //                modal.style.display = "block";
-//            };
+//            }
 //        }
         
 
