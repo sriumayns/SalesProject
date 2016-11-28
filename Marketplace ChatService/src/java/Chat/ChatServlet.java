@@ -87,6 +87,26 @@ public class ChatServlet extends HttpServlet {
         
         if (s!=null) {
             response.getWriter().print("OK");
+            if (request.getParameter("type") == "token")
+            {
+                int idx = findUsername(request.getParameter("username"));
+                if (idx != -999)
+                {
+                    OnlineUser info = on.get(idx);
+                    info.setToken(request.getParameter("token"));
+                }
+                else
+                {
+                    OnlineUser info = new OnlineUser();
+                    info.setUsername(request.getParameter("username"));
+                    info.setToken(request.getParameter("token"));
+                    on.add(info);
+                }
+            }
+            else
+            {
+                
+            }
         } else {
             response.getWriter().print("NOT");
         }

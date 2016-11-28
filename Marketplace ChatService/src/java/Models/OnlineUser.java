@@ -12,16 +12,39 @@ package Models;
 public class OnlineUser {
     public String username;
     public String tokenFCM;
-    public String chattingWith;
 
-    public OnlineUser(String username, String tokenFCM, String chattingWith) {
+    public OnlineUser() {
+        this.username = "";
+        this.tokenFCM = "";
+    }
+    
+    public OnlineUser(String username, String tokenFCM) {
         this.username = username;
         this.tokenFCM = tokenFCM;
-        this.chattingWith = chattingWith;
+    }
+    
+    public String getUsername()
+    {
+        return this.username;
+    }
+    
+    public String getToken()
+    {
+        return this.tokenFCM;
+    }
+    
+    public void setUsername(String username)
+    {
+        this.username = username;
+    }
+    
+        public void setToken(String token)
+    {
+        this.tokenFCM = token;
     }
     
     @Override
     public String toString() {
-        return "Username: " + username+ "\nToken: " +tokenFCM + "\n ChattingWith: " + chattingWith;
+        return "Username: " + username+ "\nToken: " +tokenFCM + "\n";
     }
 }
