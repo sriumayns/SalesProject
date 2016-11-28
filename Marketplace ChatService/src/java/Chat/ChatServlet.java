@@ -14,7 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import Models.OnlineUser;
 /**
  *
  * @author rezaramadhan
@@ -32,11 +32,11 @@ public class ChatServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     
-    ArrayList<String> chats;
+    ArrayList<OnlineUser> on;
     
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
-        chats = new ArrayList<>();
+        on = new ArrayList<>();
   }
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -51,9 +51,6 @@ public class ChatServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet ChatServlet at " + request.getContextPath() + "</h1>");
-            for (String chat : chats) {
-                out.println("<p>" + chat + "</p>");
-            }
             out.println("</body>");
             out.println("</html>");
         }
@@ -86,8 +83,25 @@ public class ChatServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        processRequest(request, response);
-        chats.add(request.getParameter("chat"));
-        response.getWriter().print("OK");
+        String s = request.getParameter("content");
+        
+        if (s!=null) {
+            response.getWriter().print("OK");
+        } else {
+            response.getWriter().print("NOT");
+        }
+    }
+    
+    private int findUsername(String username) {
+        int i = 0;
+        while (i < on.size()) {
+            if (on.get(i).username.equals(username)) {
+                return i;
+            }
+            i++;
+        }
+        
+        return -999;
     }
 
     /**

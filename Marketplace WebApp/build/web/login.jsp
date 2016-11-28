@@ -40,10 +40,28 @@
                 </form>
                 <script>
                     var chatApp = angular.module('chatApp', ['ngSanitize'])
-                    function chatController($scope) {
+                    function chatController($scope, $http) {
                         $scope.chatHistory = '';
                         $scope.appendChat = function() {
-                            $scope.chatHistory = $scope.chatHistory + '<p class="chat-msg">' + $scope.inputChat +'</p>';  
+                            $scope.chatHistory = $scope.chatHistory + '<p class="chat-msg">' + $scope.inputChat +'</p>';
+                            
+                            //COBA AJAX
+                            var data = "body=" + $scope.inputChat;
+
+                            var config = {
+                                headers : {
+                                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                                }
+                            }
+
+                            $http.post('http://localhost:8080/Marketplace_ChatService/chat', data, config)
+                            .success(function (data, status, headers, config) {
+                                alert(data);
+                            })
+                            .error(function (data, status, header, config) {
+                                alert(data + status + header + config);
+                            });
+            
                         }
                         //$scope.lalala.$setPristine();
                     }

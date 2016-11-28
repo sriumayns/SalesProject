@@ -1,0 +1,18 @@
+<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase-messaging.js"></script>
+
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBbj20UMJeA13Bfx1HXNcvpe9sXR_uFZbk",
+    authDomain: "wbd3-980bd.firebaseapp.com",
+    databaseURL: "https://wbd3-980bd.firebaseio.com",
+    storageBucket: "",
+    messagingSenderId: "354527811118"
+  };
+  firebase.initializeApp(config);
+</script>
