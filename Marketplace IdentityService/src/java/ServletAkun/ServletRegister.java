@@ -105,7 +105,7 @@ public class ServletRegister extends HttpServlet {
                     conn.close();
                     out.println("<h2>Data Saved</h2>");
                     out.println("<h2>Token : "+ token +"</h2>");
-                    response.sendRedirect("http://localhost:8080/Marketplace_WebApp/ServletCookie?token="+token+"&username="+username);
+                    response.sendRedirect("http://localhost:8080/ServletCookie?token="+token+"&username="+username);
                     
                 }
             } catch(SQLException se){

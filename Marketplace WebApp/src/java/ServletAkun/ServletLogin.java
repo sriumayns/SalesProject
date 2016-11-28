@@ -44,9 +44,9 @@ public class ServletLogin extends HttpServlet {
             out.println("</body>");
             out.println("</html>");
             if(request.getParameter("username").equals("") || request.getParameter("username").length()>30){
-                response.sendRedirect("http://localhost:8080/Marketplace_WebApp/login.jsp");
+                response.sendRedirect("http://localhost:8080/login.jsp");
             } else if(request.getParameter("password").equals("") || request.getParameter("password").length()>20){
-                response.sendRedirect("http://localhost:8080/Marketplace_WebApp/login.jsp");
+                response.sendRedirect("http://localhost:8080/login.jsp");
             } 
                         
             response.setStatus(307); //this makes the redirection keep your requesting method as is.

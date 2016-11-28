@@ -85,7 +85,7 @@ public class ServletLogout extends HttpServlet {
 //            out.println("Goodbye");
 //            out.println("</body>");
 //            out.println("</html>");
-                response.sendRedirect("http://localhost:8080/Marketplace_WebApp/login.jsp");
+                response.sendRedirect("http://localhost:8080/login.jsp");
             } catch(SQLException se){
                 //Handle errors for JDBC
                 out.print("<p>");

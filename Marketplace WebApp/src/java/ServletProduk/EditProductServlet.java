@@ -48,7 +48,7 @@ public class EditProductServlet extends HttpServlet {
             String price = request.getParameter("price");
             String status = Controller.ProdukController.updateProduk(id,name,desc,price);
             if (status.contains("OK")) {
-                response.sendRedirect("http://localhost:8080/Marketplace_WebApp/yourproducts.jsp");
+                response.sendRedirect("http://localhost:8080/yourproducts.jsp");
             }
             out.println(status + "<br>");
             out.println("<br> name " +name);

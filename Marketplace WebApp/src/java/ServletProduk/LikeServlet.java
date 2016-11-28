@@ -64,7 +64,7 @@ public class LikeServlet extends HttpServlet {
             }
             
             if (resp.equals("OK")) {
-                response.sendRedirect("http://localhost:8080/Marketplace_WebApp/catalog.jsp");
+                response.sendRedirect("http://localhost:8080/catalog.jsp");
             }
             out.println("</body>");
             out.println("</html>");

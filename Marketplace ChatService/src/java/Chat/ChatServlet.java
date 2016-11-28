@@ -51,6 +51,9 @@ public class ChatServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet ChatServlet at " + request.getContextPath() + "</h1>");
+            for (OnlineUser u : on) {
+                out.println("<p>"+ u +"<p>");
+            }
             out.println("</body>");
             out.println("</html>");
         }
@@ -83,11 +86,8 @@ public class ChatServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        processRequest(request, response);
-        String s = request.getParameter("content");
-        
-        if (s!=null) {
             response.getWriter().print("OK");
-            if (request.getParameter("type") == "token")
+            if ("token".equals(request.getParameter("type")))
             {
                 int idx = findUsername(request.getParameter("username"));
                 if (idx != -999)
@@ -105,11 +105,9 @@ public class ChatServlet extends HttpServlet {
             }
             else
             {
-                
+                response.getWriter().println("to:" + request.getParameter("to"));
+                response.getWriter().println("msg:" + request.getParameter("msg"));
             }
-        } else {
-            response.getWriter().print("NOT");
-        }
     }
     
     private int findUsername(String username) {

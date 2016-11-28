@@ -47,19 +47,19 @@ public class ServletRegister extends HttpServlet {
             
             
             if(request.getParameter("fullname").equals("") || request.getParameter("fullname").length()>30){
-                response.sendRedirect("http://localhost:8080/Marketplace_WebApp/register.jsp");
+                response.sendRedirect("http://localhost:8080/register.jsp");
             } else if(request.getParameter("username").equals("") || request.getParameter("username").length()>30){
-                response.sendRedirect("http://localhost:8080/Marketplace_WebApp/register.jsp");
+                response.sendRedirect("http://localhost:8080/register.jsp");
             } else if(request.getParameter("email").equals("") || request.getParameter("email").length()>50){
-                response.sendRedirect("http://localhost:8080/Marketplace_WebApp/register.jsp");
+                response.sendRedirect("http://localhost:8080/register.jsp");
             } else if(request.getParameter("password").equals("") || request.getParameter("password").length()>20 || !request.getParameter("password").equals(request.getParameter("confirmpassword"))){
-                response.sendRedirect("http://localhost:8080/Marketplace_WebApp/register.jsp");
+                response.sendRedirect("http://localhost:8080/register.jsp");
             } else if(request.getParameter("address").equals("") || request.getParameter("address").length()>50){
-                response.sendRedirect("http://localhost:8080/Marketplace_WebApp/register.jsp");
+                response.sendRedirect("http://localhost:8080/register.jsp");
             } else if(request.getParameter("postalcode").equals("") || request.getParameter("postalcode").length()>5){
-                response.sendRedirect("http://localhost:8080/Marketplace_WebApp/register.jsp");
+                response.sendRedirect("http://localhost:8080/register.jsp");
             } else if(request.getParameter("phonenumber").equals("") || request.getParameter("phonenumber").length()>10){
-                response.sendRedirect("http://localhost:8080/Marketplace_WebApp/register.jsp");
+                response.sendRedirect("http://localhost:8080/register.jsp");
             }
                         
             response.setStatus(307); //this makes the redirection keep your requesting method as is.

@@ -11,7 +11,7 @@
         
 	<p>Hi, <%= Controller.RetrieveCookieController.retrieveName(request.getCookies())%>!</p>
         
-	<p><a href="http://localhost:8080/Marketplace_WebApp/ServletLogout" onclick="return(logout());">logout</a></p>
+	<p><a href="http://localhost:8080/ServletLogout" onclick="return(logout());">logout</a></p>
 	<script type="text/javascript">
         <jsp:include page="/javascript/logout-confirmation.js"/>
         </script>
