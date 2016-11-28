@@ -12,16 +12,16 @@ const messaging = firebase.messaging();
 messaging.requestPermission()
 .then(function() 
 {
-	console.log('Have permission');
+	alert('Have permission');
   return messaging.getToken();
 })
 .then(function(token)
 {
-  console.log(token);
+        alert(token);
 })
 .catch(function(err)
 {
-	console.log('Error occured');
+	alert('Error occured');
 })
 
 messaging.onMessage(function(payload)
