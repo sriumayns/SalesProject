@@ -112,47 +112,34 @@ Chatting
 
 ![](img/mockup02.png)
 
+
 ### Referensi Terkait
 Berikut adalah referensi yang dapat Anda baca terkait tugas ini:
 1. https://firebase.google.com/docs/web/setup
 2. https://firebase.google.com/docs/cloud-messaging/js/client
 3. https://docs.angularjs.org/api
 
-
 Selain itu, silahkan cari "user agent parser", "how to get my IP from HTTPServletRequest", dan "HTTP Headers field" untuk penjelasan lebih lanjut.
 
 
-### Prosedur Demo
-Sebelum demo, asisten akan melakukan checkout ke hash commit terakhir yang dilakukan sebelum deadline. Hal ini digunakan untuk memastikan kode yang akan didemokan adalah kode yang terakhir disubmit sebelum deadline.
-
-
 ### Pembagian Tugas
-
-
-Tugas kali ini cukup rumit, karena melibatkan layanan dari pihak ketiga, dan framework. Bila tak mengerti, luangkan waktu belajar lebih banyak. Bila belum juga mengerti, belajarlah bersama-sama kelompokmu. Bila Anda sekelompok bingung, bertanyalah (bukan menyontek) ke teman seangkatanmu. Bila seangkatan bingung, bertanyalah pada asisten manapun.
-
-
-Harap semua anggota kelompok mengerjakan baik implementasi Firebase sebagai *cloud service* maupun *framework* AngularJS. Tuliskan pembagian tugas seperti berikut ini.
-
-
 Chat app frontend :
-1. Fungsionalitas A : 135140XX  
-2. Fungsionalitas B : 135140XX  
-
+1. Desain Chatbox : 13514007  
+2. AngularJS in Catalog : 13514007  
 
 Chat app backend :  
-1. Fungsionalitas C : 135140XX  
-2. Fungsionalitas D : 135140XX  
+1. Firebase (Send Message, Request Token, Notification) : 13514109  
+2. Client Token Management : 13514109
+3. ChatService Send Message (Receiver Token Retrieval, Send Message with HTTP POST) : 13514109
     
 Fitur security (IP, User-agent) :
-1. Fungsionalitas E : 135140XX
-2. Fungsionalitas F : 135140XX
+1. Create User Token : 13514107
+2. Check Token : 13514107
+3. Get User Token & IP : 13514107
 
 
 ## About
-
-Asisten IF3110 2016
-
-Adin | Chairuni | David | Natan | Nilta | Tifani | Wawan | William
-
-Dosen: Yudistira Dwi Wardhana | Riza Satria Perdana
+Created by
+13514007 Sri Umay Nur'aini Sholihah 
+13514107 Muhammad Reza Ramadhan
+13514109 Resa Kemal Saharso
