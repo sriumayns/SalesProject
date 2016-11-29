@@ -112,16 +112,17 @@ Chatting
 
 ![](img/mockup02.png)
 
+
 ### Referensi Terkait
 Berikut adalah referensi yang dapat Anda baca terkait tugas ini:
 1. https://firebase.google.com/docs/web/setup
 2. https://firebase.google.com/docs/cloud-messaging/js/client
 3. https://docs.angularjs.org/api
 
-
 Selain itu, silahkan cari "user agent parser", "how to get my IP from HTTPServletRequest", dan "HTTP Headers field" untuk penjelasan lebih lanjut.
 
 
+### Pembagian Tugas
 Chat app frontend :
 1. Desain Chatbox : 13514007  
 2. AngularJS in Catalog : 13514007  
