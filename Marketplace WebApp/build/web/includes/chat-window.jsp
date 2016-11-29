@@ -12,10 +12,10 @@
         <!-- The Modal -->
         <div id="myModal" class="modal">
             <!-- Modal content -->
-            <div class="modal-content" ng-app="chatApp" ng-controller="chatController">
+            <div class="modal-content">
                 <div class="chat-header">
                     <span class="close">×</span>
-                    <span class="chat-friend">Chat Box</span>
+                    <span class="chat-friend">{{username}}</span>
                 </div>
                 <div class="chat-box" ng-bind-html="chatHistory">
                     
@@ -30,7 +30,10 @@
                     function chatController($scope) {
                         $scope.chatHistory = '';
                         $scope.appendChat = function() {
-                            $scope.chatHistory = $scope.chatHistory + '<p class="chat-msg">' + $scope.inputChat +'</p>';  
+                            if ($scope.inputChat!=null){
+                                $scope.chatHistory = $scope.chatHistory + '<p class="sent-msg">' + $scope.inputChat +'</p>';  
+                                $scope.chatHistory = $scope.chatHistory + '<p class="recv-msg">' + $scope.inputChat +'</p>';  
+                            }
                         }
                         //$scope.lalala.$setPristine();
                     }

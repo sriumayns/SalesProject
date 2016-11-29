@@ -29,8 +29,8 @@
 //        response.addCookie(c);
 //        out.println(Controller.RetrieveCookieController.retrieveToken(cookies) + "newVal<br>");
 %>
-
+<html ng-app="chatApp" ng-controller="chatController">
 <jsp:include page="views/catalog-view.jsp" />
 <jsp:include page="includes/chat-window.jsp" />
-
+</html>
 <% } %>

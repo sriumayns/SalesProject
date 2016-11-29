@@ -371,12 +371,23 @@ label {
 }
 
 
-.chat-box .chat-msg {
+.chat-box .recv-msg {
     padding: 5px;
     margin: 5px 20px;
     width: 150px;
     word-wrap: break-word;
     border: solid 1px black;
+    float: left;
+}
+
+.chat-box .sent-msg {
+    padding: 5px;
+    margin: 5px 20px;
+    width: 150px;
+    word-wrap: break-word;
+    border: solid 1px black;
+    text-align: right;
+    float: right;
 }
 
 .modal-content input{
