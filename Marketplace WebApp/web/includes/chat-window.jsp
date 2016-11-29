@@ -15,7 +15,7 @@
             <div class="modal-content">
                 <div class="chat-header">
                     <span class="close">×</span>
-                    <span class="chat-friend">{{username}}</span>
+                    <span class="chatfriend" id="chatfriend">{{username}}</span>
                 </div>
                 <div class="chat-box" ng-bind-html="chatHistory">
                     
@@ -27,17 +27,38 @@
                 </form>
                 <script>
                     var chatApp = angular.module('chatApp', ['ngSanitize'])
-                    function chatController($scope) {
+                   
+                    function chatController($scope, $http, $window) {
+                        $scope.$watch('username', function () {
+                            console.log($scope.username); 
+                        },1000);
+                        $scope.friend = $window.friend;
                         $scope.chatHistory = '';
+                        
                         $scope.appendChat = function() {
+                            var to = document.getElementById('chatfriend').innerHTML;
+                        
                             if ($scope.inputChat!=null){
                                 $scope.chatHistory = $scope.chatHistory + '<p class="sent-msg">' + $scope.inputChat +'</p>';  
-                                $scope.chatHistory = $scope.chatHistory + '<p class="recv-msg">' + $scope.inputChat +'</p>';  
                             }
+                            var data = "type=msg&msg=" + $scope.inputChat;
+                            data += "&to=" + to;
+                            var config = {
+                                headers : {
+                                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                                }
+                            }
+                            $http.post('http://localhost:8080/Marketplace_ChatService/chat', data, config)
+                            .success(function (data, status, headers, config) {
+                                alert(data);
+                            })
+                            .error(function (data, status, header, config) {
+                                alert("err", data + status + header + config);
+                            });
                         }
                         appendIncomingChat = function(data) {
                             console.log("incoming chat", data);
-                            $scope.chatHistory = $scope.chatHistory + '<p class="chat-msg">' + data +'</p>';
+                            $scope.chatHistory = $scope.chatHistory + '<p class="recv-msg">' + data +'</p>';
                             console.log($scope.chatHistory);
                             $scope.$apply();
                         }
