@@ -15,7 +15,7 @@
             <div class="modal-content">
                 <div class="chat-header">
                     <span class="close">×</span>
-                    <span class="chatfriend" id="chatfriend">{{username}}</span>
+                    <span class="chatfriend"` id="chatfriend">{{username}}</span>
                 </div>
                 <div class="chat-box" ng-bind-html="chatHistory">
                     
@@ -29,10 +29,6 @@
                     var chatApp = angular.module('chatApp', ['ngSanitize'])
                    
                     function chatController($scope, $http, $window) {
-                        $scope.$watch('username', function () {
-                            console.log($scope.username); 
-                        },1000);
-                        $scope.friend = $window.friend;
                         $scope.chatHistory = '';
                         
                         $scope.appendChat = function() {
@@ -43,6 +39,7 @@
                             }
                             var data = "type=msg&msg=" + $scope.inputChat;
                             data += "&to=" + to;
+                            console.log(data);
                             var config = {
                                 headers : {
                                     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
@@ -50,7 +47,7 @@
                             }
                             $http.post('http://localhost:8080/Marketplace_ChatService/chat', data, config)
                             .success(function (data, status, headers, config) {
-                                alert(data);
+                                console.log('ok',data);
                             })
                             .error(function (data, status, header, config) {
                                 alert("err", data + status + header + config);

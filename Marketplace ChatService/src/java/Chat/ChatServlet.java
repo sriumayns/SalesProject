@@ -99,46 +99,58 @@ public class ChatServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        processRequest(request, response);
-        /*String s = request.getParameter("content");
         
-        if (s!=null) {
-            //response.getWriter().print("OK");
-            //if (request.getParameter("type") == "token")
-            //{*/
-                //int idx = findUsername(request.getParameter("username"));
-                int idx = findUsername("test");
+            
+            if ("token".equals(request.getParameter("type")))
+            {
+                int idx = findUsername(request.getParameter("username"));
                 if (idx != -999)
                 {
                     on.get(idx).setToken(request.getParameter("token"));
+                    response.getWriter().print("Updated");
                 }
                 else
                 {
                     OnlineUser info = new OnlineUser();
-                    info.setUsername("test");
-                    info.setToken("dwrC_XOVBVs:APA91bFSEbUj7UWNma96zZTw1rawt-0PYhynYO5807YNITkd9AjTik_E5pWDtEAxkaTULEkEVqOJTsAi8KIXU-1FBRPvcc-zZoSRMeaFfhTpN4n9sP_Cr9KIQe4Ni6qILBzImgyxoMZm");
+                    info.setUsername(request.getParameter("username"));
+                    info.setToken(request.getParameter("token"));
                     on.add(info);
-                }
-            /*}
-            else
-            {
-                try {
-                    String sender = request.getParameter("to");
-                    String msg = request.getParameter("msg");
-                    String to = on.get(findUsername(sender)).getToken();
-                    JsonObject payload = Json.createObjectBuilder()
-                            .add("notification", Json.createObjectBuilder()
-                                    .add("title",sender)
-                                    .add("body",msg))
-                            .add("to",to)
-                            .build();
-                    sendMessage(payload);
-                } catch (Exception ex) {
-                    Logger.getLogger(ChatServlet.class.getName()).log(Level.SEVERE, null, ex);
+                    response.getWriter().print("Created");
                 }
             }
-        } else {
-            response.getWriter().print("NOT");
-        }*/
+            else
+            {
+                
+                response.getWriter().print("aa\n");
+                try {
+                    String sender = request.getParameter("to");
+                    response.getWriter().print("bb\n");
+                    String msg = request.getParameter("msg");
+                    
+                    response.getWriter().print("cc\n");
+                    int idx = findUsername(sender);
+                    if (idx != -999) {
+                        String to = on.get(idx).getToken();
+
+                        response.getWriter().print("dd\n");
+                        JsonObject payload = Json.createObjectBuilder()
+                                .add("notification", Json.createObjectBuilder()
+                                        .add("title",sender)
+                                        .add("body",msg))
+                                .add("to",to)
+                                .build();
+
+                        sendMessage(payload);
+
+                        response.getWriter().print("sent?" + to);
+                    } else {
+                        response.getWriter().print("notOK");
+                    }
+                } catch (Exception ex) {
+                    Logger.getLogger(ChatServlet.class.getName()).log(Level.SEVERE, null, ex);
+                    response.getWriter().print("excp" + ex);
+                }
+            }
     }
     
     private void sendMessage(JsonObject payload) throws Exception
