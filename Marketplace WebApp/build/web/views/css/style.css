@@ -337,7 +337,6 @@ label {
 
 /******************** CHAT BOX ********************/
 .modal {
-    /* display: none; Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 100px; /* Location of the box */
@@ -350,7 +349,6 @@ label {
 
 /* Modal Content */
 .modal-content {
-   
     background-color: #ffffff;
     margin-left: 700px;
     margin-top: 100px;
@@ -376,10 +374,9 @@ label {
 .chat-box .recv-msg {
     padding: 5px;
     margin: 5px 20px;
-    max-width: 200px;
+    width: 150px;
     word-wrap: break-word;
     border: solid 1px black;
-    float: left;
     clear: right;
     background: #dddddd;
 }
@@ -387,7 +384,7 @@ label {
 .chat-box .sent-msg {
     padding: 5px;
     margin: 5px 20px;
-    max-width: 200px;
+    width: 150px;
     word-wrap: break-word;
     border: solid 1px black;
     text-align: right;

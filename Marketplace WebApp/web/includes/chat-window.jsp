@@ -17,7 +17,7 @@
                     
                     <span class="close" ng-click="chatBox=false;">×</span>
                     <ul class="chat-friend">
-                        <li><span>{{username}}</span></li>
+                        <li><span id="chatfriend">{{username}}</span></li>
                     </ul>
 
                 </div>

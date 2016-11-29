@@ -4,3 +4,5 @@
 /Marketplace WebService/nbproject/private/*
 /Marketplace IdentityService/nbproject/private/*
 /Marketplace ChatService/nbproject/private/*
+/Marketplace ChatService/dist/
+/Marketplace IdentityService/dist/
