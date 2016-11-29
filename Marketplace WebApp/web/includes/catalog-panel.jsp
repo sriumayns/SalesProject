@@ -58,9 +58,9 @@
                 <ul>
                     <li class="hidden"><a href="#" ><%= owner %></a></li>
                 <% if (isON) {%>
-                    <li class="username online" class="openChat" onclick="modal.style.display = 'block';"><a href="#" ng-init="username = '<%= owner %>'" ><%= owner %></a></li>
+                    <li class="username online" class="openChat" ng-click="showChat('<%= owner %>');"><a><%= owner %></a></li>
                 <%} else {%>
-                    <li class="username offline" onclick="return false;"><a href="#" ><%= owner %></a></li>
+                    <li class="username offline" ng-click="showChat('<%= owner %>');"><a><%= owner %></a></li>
                 <% } %>
                 </ul>
                 <p> <%= addtime %> </p>

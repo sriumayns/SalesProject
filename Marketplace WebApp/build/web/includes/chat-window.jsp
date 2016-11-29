@@ -10,12 +10,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-sanitize.js"></script>
 
         <!-- The Modal -->
-        <div id="myModal" class="modal">
+        <div id="myModal" class="modal" ng-show="chatBox" >
             <!-- Modal content -->
             <div class="modal-content">
                 <div class="chat-header">
-                    <span class="close">×</span>
-                    <span class="chat-friend">{{username}}</span>
+                    <span class="close" ng-click="chatBox=false;">×</span>
+                    <ul class="chat-friend">
+                        <li><span>{{username}}</span></li>
+                    </ul>
                 </div>
                 <div class="chat-box" ng-bind-html="chatHistory">
                     
@@ -29,11 +31,19 @@
                     var chatApp = angular.module('chatApp', ['ngSanitize'])
                     function chatController($scope) {
                         $scope.chatHistory = '';
+                        $scope.username = 'aa';
+                        $scope.chatBox = false;
                         $scope.appendChat = function() {
                             if ($scope.inputChat!=null){
                                 $scope.chatHistory = $scope.chatHistory + '<p class="sent-msg">' + $scope.inputChat +'</p>';  
                                 $scope.chatHistory = $scope.chatHistory + '<p class="recv-msg">' + $scope.inputChat +'</p>';  
                             }
+                        }
+                        $scope.showChat = function(user) {
+                            console.log(user);
+                            $scope.chatBox = !$scope.chatBox;
+                            console.log($scope.chatBox);
+                            $scope.username = user;
                         }
                         appendIncomingChat = function(data) {
                             console.log("incoming chat", data);
@@ -50,32 +60,9 @@
                         })
                         //$scope.lalala.$setPristine();
                     }
+                    
+                    
+                    
                 </script>
             </div>
         </div>
-
-
-        <script>
-        // Get the modal
-        var modal = document.getElementById('myModal');
-
-        // Get the button that opens the modal
-        var btn = document.getElementById("openChat");
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-     
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
-        };
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        };
-        </script>

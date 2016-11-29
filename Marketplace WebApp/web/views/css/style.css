@@ -181,6 +181,7 @@ nav ul li a.active{
 .date-and-time a{
     font-weight: bold;
     font-size: 16px;
+    color: black;
     padding-left: -5px;
 }
 
@@ -336,11 +337,11 @@ label {
 
 /******************** CHAT BOX ********************/
 .modal {
-    display: none; /* Hidden by default */
+    /* display: none; Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 100px; /* Location of the box */
-    left: 0;
+    right: 0;
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
@@ -349,6 +350,7 @@ label {
 
 /* Modal Content */
 .modal-content {
+   
     background-color: #ffffff;
     margin-left: 700px;
     margin-top: 100px;
@@ -374,21 +376,38 @@ label {
 .chat-box .recv-msg {
     padding: 5px;
     margin: 5px 20px;
-    width: 150px;
+    max-width: 200px;
     word-wrap: break-word;
     border: solid 1px black;
     float: left;
+    clear: right;
+    background: #dddddd;
 }
 
 .chat-box .sent-msg {
     padding: 5px;
     margin: 5px 20px;
-    width: 150px;
+    max-width: 200px;
     word-wrap: break-word;
     border: solid 1px black;
     text-align: right;
     float: right;
+    clear: left;
+    background: #d6e0f5;
 }
+
+.chat-friend {
+    padding: 0;
+    padding-left: 10px;
+    margin: 0;
+    font-weight: bold;
+    color : green;
+}
+
+.chat-friend li span{
+    color: black;
+}
+
 
 .modal-content input{
     width: 60%;
