@@ -32,6 +32,19 @@
                         $scope.appendChat = function() {
                             $scope.chatHistory = $scope.chatHistory + '<p class="chat-msg">' + $scope.inputChat +'</p>';  
                         }
+                        appendIncomingChat = function(data) {
+                            console.log("incoming chat", data);
+                            $scope.chatHistory = $scope.chatHistory + '<p class="chat-msg">' + data +'</p>';
+                            console.log($scope.chatHistory);
+                            $scope.$apply();
+                        }
+                        messaging.onMessage(function(payload)
+                        {
+                                //console.log('test');
+                                var data = payload.notification.body;
+                                console.log('onmessage',data);
+                                appendIncomingChat(data);
+                        })
                         //$scope.lalala.$setPristine();
                     }
                 </script>
@@ -49,13 +62,7 @@
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
 
-        // When the user clicks the button, open the modal
-//        for (i = 0; i < btns.length; i++) {
-//            btn.onclick = function() {
-//                modal.style.display = "block";
-//            }
-//        }
-        
+     
 
         // When the user clicks on <span> (x), close the modal
         span.onclick = function() {

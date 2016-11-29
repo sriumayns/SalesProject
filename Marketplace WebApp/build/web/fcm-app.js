@@ -15,6 +15,16 @@ function sendToServlet(data) {
     xhttp.send(data);
 }
 
+function addToChatWindow(data) {
+    var para = document.createElement("p");
+    var node = document.createTextNode(data);
+    para.appendChild(node);
+    para.className = "chat-msg";
+    
+    var element = document.getElementsByClassName("chat-box")[0];
+    element.appendChild(para);
+}
+
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyAHtE_UY7YdGOcJyNOniF4Rt9hhsXRe6_c",
