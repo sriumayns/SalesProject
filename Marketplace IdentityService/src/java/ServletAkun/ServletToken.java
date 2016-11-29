@@ -103,13 +103,13 @@ public class ServletToken extends HttpServlet {
 //                         out.println("<h2>Token : "+ token +"</h2>");
                     } else {
                         out.println("expired");
-                        //response.sendRedirect("http://localhost:8080/Marketplace_WebApp/ServletCookie?token="+token+"&username="+username);
+                        //response.sendRedirect("http://localhost:8080/ServletCookie?token="+token+"&username="+username);
                     }
                     stmt.close();
                     conn.close();
                 } else {
                     out.println("invalid");
-//                    response.sendRedirect("http://localhost:8080/Marketplace_WebApp/login.jsp");
+//                    response.sendRedirect("http://localhost:8080/login.jsp");
                 }
             } catch(SQLException se){
                 //Handle errors for JDBC

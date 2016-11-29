@@ -64,6 +64,9 @@ public class ChatServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet ChatServlet at " + request.getContextPath() + "</h1>");
+            for (OnlineUser u : on) {
+                out.println("<p>"+ u +"<p>");
+            }
             out.println("</body>");
             out.println("</html>");
         }

@@ -10,7 +10,7 @@
     int idProduct = Integer.parseInt(request.getParameter("idProduct"));
     String results = Controller.DeleteYourProductController.deleteYourProduct(idProduct);
     
-    String site = new String("http://localhost:8080/Marketplace_WebApp/yourproducts.jsp");
+    String site = new String("http://localhost:8080/yourproducts.jsp");
     response.setStatus(response.SC_MOVED_TEMPORARILY);
     response.setHeader("Location", site); 
 

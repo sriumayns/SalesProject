@@ -84,7 +84,7 @@ public class ServletCookie extends HttpServlet {
             // Set response content type
             response.setContentType("text/html");
 
-            response.sendRedirect("http://localhost:8080/Marketplace_WebApp/catalog.jsp");
+            response.sendRedirect("http://localhost:8080/catalog.jsp");
         }
     }
     

@@ -126,7 +126,7 @@ public class AddProductServlet extends HttpServlet {
                 
             o.print("<br>ok");
             if (respons.contains("OK")) {
-                response.sendRedirect("http://localhost:8080/Marketplace_WebApp/yourproducts.jsp");
+                response.sendRedirect("http://localhost:8080/yourproducts.jsp");
             }
 //            writer.println("New file " + fileName + " created at " + path);
 //            LOGGER.log(Level.INFO, "File{0}being uploaded to {1}",

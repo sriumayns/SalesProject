@@ -19,7 +19,7 @@
 			<h1>Sale<a>Project</a></h1>
 
 			<h2>Register</h2>
-                        <form method="POST" onsubmit="return(valRegister());" action="http://localhost:8080/Marketplace_WebApp/ServletRegister">
+                        <form method="POST" onsubmit="return(valRegister());" action="http://localhost:8080/ServletRegister">
 				<p>Full Name : </p>
 				<input id="fullname" type="text" name="fullname" autofocus="">
 				<p>Username :</p>

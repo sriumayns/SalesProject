@@ -98,7 +98,7 @@ public class ServletConfirmPurchase extends HttpServlet {
             String check = addPurchase(username, productid, penerima, alamat, kodepos, telp, creditnum, validnum, jumlah, owner, productname, price, photo);
             out.print(check);
             if (check.contains("OK")) {
-                response.sendRedirect("http://localhost:8080/Marketplace_WebApp/purchased.jsp");
+                response.sendRedirect("http://localhost:8080/purchased.jsp");
                 response.setStatus(307); //this makes the redirection keep your requesting method as is.
             }
         }

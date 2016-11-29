@@ -20,7 +20,7 @@
     
     if (newToken.contains("expired") || cookies.length==1 || newToken.contains("invalid")){
         out.print(newToken);
-        String site = new String("http://localhost:8080/Marketplace_WebApp/login.jsp");
+        String site = new String("http://localhost:8080/login.jsp");
         response.setStatus(response.SC_MOVED_TEMPORARILY);
         response.setHeader("Location", site); 
     } else {
@@ -29,8 +29,8 @@
 //        response.addCookie(c);
 //        out.println(Controller.RetrieveCookieController.retrieveToken(cookies) + "newVal<br>");
 %>
-
+<html ng-app="chatApp" ng-controller="chatController">
 <jsp:include page="views/catalog-view.jsp" />
 <jsp:include page="includes/chat-window.jsp" />
-
+</html>
 <% } %>

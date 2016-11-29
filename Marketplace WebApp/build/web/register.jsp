@@ -11,7 +11,7 @@
     cookies = request.getCookies();
 //    out.println(cookies.length);
     if (cookies.length>1){
-        String site = new String("http://localhost:8080/Marketplace_WebApp/catalog.jsp");
+        String site = new String("http://localhost:8080/catalog.jsp");
         response.setStatus(response.SC_MOVED_TEMPORARILY);
         response.setHeader("Location", site); 
     } else {

@@ -10,11 +10,15 @@
 	<head>
 		<meta charset="utf-8"/>
 		<link rel="stylesheet" href="views/css/style.css">
-		<script src="javascript/catalog.js" type="text/javascript"></script>
+		<!--<script src="javascript/catalog.js" type="text/javascript"></script>-->
+                <script src='https://www.gstatic.com/firebasejs/3.6.1/firebase.js'></script>
+                <!--<script src="ajaxfirebasetest.js"></script>-->
+                <script src="fcm-app.js"></script>
+                <jsp:include page="../fcm-app.jsp" />
 		<title>Sale Project</title>
 	</head>
 
-	<body onload="pageLoad()">
+	<body>
 		<header id="header">
 			<h1>Sale<a>Project</a></h1>
 			<div class="float-right">

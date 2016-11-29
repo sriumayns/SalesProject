@@ -76,7 +76,7 @@ public class ServletLogout extends HttpServlet {
             out.println("</html>");
             
             response.sendRedirect("http://localhost:8082/Marketplace_IdentityService/ServletLogout?username="+cookies[1].getValue());
-            //response.sendRedirect("http://localhost:8080/Marketplace_WebApp/login.jsp");
+            //response.sendRedirect("http://localhost:8080/login.jsp");
             
             
         }

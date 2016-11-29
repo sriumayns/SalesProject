@@ -12,10 +12,10 @@
         <!-- The Modal -->
         <div id="myModal" class="modal">
             <!-- Modal content -->
-            <div class="modal-content" ng-app="chatApp" ng-controller="chatController">
+            <div class="modal-content">
                 <div class="chat-header">
                     <span class="close">×</span>
-                    <span class="chat-friend">Chat Box</span>
+                    <span class="chat-friend">{{username}}</span>
                 </div>
                 <div class="chat-box" ng-bind-html="chatHistory">
                     
@@ -30,8 +30,24 @@
                     function chatController($scope) {
                         $scope.chatHistory = '';
                         $scope.appendChat = function() {
-                            $scope.chatHistory = $scope.chatHistory + '<p class="chat-msg">' + $scope.inputChat +'</p>';  
+                            if ($scope.inputChat!=null){
+                                $scope.chatHistory = $scope.chatHistory + '<p class="sent-msg">' + $scope.inputChat +'</p>';  
+                                $scope.chatHistory = $scope.chatHistory + '<p class="recv-msg">' + $scope.inputChat +'</p>';  
+                            }
                         }
+                        appendIncomingChat = function(data) {
+                            console.log("incoming chat", data);
+                            $scope.chatHistory = $scope.chatHistory + '<p class="chat-msg">' + data +'</p>';
+                            console.log($scope.chatHistory);
+                            $scope.$apply();
+                        }
+                        messaging.onMessage(function(payload)
+                        {
+                                //console.log('test');
+                                var data = payload.notification.body;
+                                console.log('onmessage',data);
+                                appendIncomingChat(data);
+                        })
                         //$scope.lalala.$setPristine();
                     }
                 </script>
@@ -49,13 +65,7 @@
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
 
-        // When the user clicks the button, open the modal
-//        for (i = 0; i < btns.length; i++) {
-//            btn.onclick = function() {
-//                modal.style.display = "block";
-//            }
-//        }
-        
+     
 
         // When the user clicks on <span> (x), close the modal
         span.onclick = function() {

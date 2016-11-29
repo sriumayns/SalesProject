@@ -21,7 +21,7 @@
 
 			<h2>Please Login</h2>
 
-			<form method="POST" onsubmit="return(validateLogin());" action="http://localhost:8080/Marketplace_WebApp/ServletLogin" >
+			<form method="POST" onsubmit="return(validateLogin());" action="http://localhost:8080/ServletLogin" >
 				<p>Email or Username</p>
 				<input id="username" type="text" name="username" autofocus="">
 				<p>Password</p>
